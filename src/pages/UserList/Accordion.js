@@ -15,13 +15,14 @@ const AccordionItem = ({
       className="accordion-header text-blue-500 flex justify-between items-center w-full py-2"
       onClick={onToggle}
     >
+
       <span className="text-lg font-semibold">{name}</span>
       <span className="text-lg font-semibold">{mainTech}</span>
       <span className="text-lg font-semibold">{englishLevel}</span>
       <NavLink to={`/${name}/profile-page`}>Profile</NavLink>
       <NavLink to={`/${name}/carear-planing`}> Learning</NavLink>
       <span
-        className={`transform transition-transform text-lg duration-300 ${
+        className={`transform transition-transform text-lg duration-300 w-1/6 ${
           isOpen ? "rotate-180" : ""
         }`}
       >
