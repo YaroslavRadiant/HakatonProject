@@ -1,44 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useDrop } from "react-dnd";
-
-// import { useApolloClient } from "@apollo/client";
-// import { GET_ITEMS } from "../apollo/queries";
-
-const sortOptions = ["custom", "content", "date"];
+import useStore from "../../../store/store";
 
 const DropWrapper = ({ onDrop, children, status }) => {
   const [isAdding, setIsAdding] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [selectValue, setSelectValue] = useState("custom");
+  const addItem = useStore((state) => state.addItem);
 
-  // const client = useApolloClient();
-
-  // const { statuses } = client.readQuery({ query: GET_ITEMS });
-
-  const handleAddItem = (text) => {
-    const newItem = {
-      id: Math.floor(Math.random() * (1000000 - 1 + 1)) + 1,
-      status: status,
-      content: text,
-      title: "New item!!",
-      date: Date.now(),
-    };
-
-    // const updatedStatuses = statuses.map((statusItem) => {
-    //   if (statusItem.status === status) {
-    //     return {
-    //       ...statusItem,
-    //       items: [...statusItem.items, newItem],
-    //     };
-    //   }
-    //   return statusItem;
-    // });
-
-    // client.writeQuery({
-    //   query: GET_ITEMS,
-    //   data: { statuses: updatedStatuses },
-    // });
-  };
+  const handleAddItem = useCallback(
+    (text) => {
+      const newItem = {
+        id: Math.floor(Math.random() * (1000000 - 1 + 1)) + 1,
+        status: status,
+        content: text,
+        title: "New item!!",
+        date: Date.now(),
+      };
+      addItem(newItem); 
+    },
+    [status, addItem]
+  );
 
   const handleOnClick = () => {
     handleAddItem(inputValue);
@@ -49,42 +30,6 @@ const DropWrapper = ({ onDrop, children, status }) => {
   const handleCancel = () => {
     setIsAdding(false);
     setInputValue("");
-  };
-
-  const handleChangeValue = (e) => {
-    setSelectValue(e.target.value);
-  };
-
-  const handleSortRow = (sortType, rowStatus) => {
-    // const updatedData = [
-    //   ...statuses.map((status) => {
-    //     if (status.status === rowStatus) {
-    //       if (sortType === "custom") {
-    //         return status;
-    //       } else if (sortType === "date") {
-    //         return {
-    //           ...status,
-    //           items: status.items.slice().sort((a, b) => a.date - b.date),
-    //         };
-    //       } else if (sortType === "content") {
-    //         return {
-    //           ...status,
-    //           items: status.items
-    //             .slice()
-    //             .sort((a, b) => a.content.length - b.content.length),
-    //         };
-    //       }
-    //     }
-    //     return status;
-    //   }),
-    // ];
-    // const newData = {
-    //   statuses: updatedData,
-    // };
-    // client.writeQuery({
-    //   query: GET_ITEMS,
-    //   data: newData,
-    // });
   };
 
   const [, drop] = useDrop({
@@ -99,25 +44,10 @@ const DropWrapper = ({ onDrop, children, status }) => {
 
   return (
     <div ref={drop} className="min-h-80">
-      <div className="flex items-center mt-5 mb-5">
-        <select
-          className="w-full border-none rounded-md"
-          value={selectValue}
-          onChange={(e) => handleChangeValue(e)}
-        >
-          {sortOptions.map((el) => (
-            <option key={el}>{el}</option>
-          ))}
-        </select>
-        <button
-          className="h-10 w-20 text-black bg-white border-none ml-4"
-          onClick={() => handleSortRow(selectValue, status)}
-        >
-          Sort
-        </button>
-      </div>
+   
 
       {React.cloneElement(children)}
+
       {isAdding ? (
         <div className="flex" style={{ height: "26px" }}>
           <input
