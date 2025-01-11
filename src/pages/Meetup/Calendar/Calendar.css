@@ -1,0 +1,20 @@
+:root {
+  --cell-size: 80px;
+}
+
+.rdp-root {
+  --rdp-day_button-height: 40px;
+}
+
+.rdp-day {
+  height: var(--cell-size);
+  width: var(--cell-size);
+}
+.--rdp-day_button-height {
+  height: 20px;
+}
+.rdp-day button {
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+}
