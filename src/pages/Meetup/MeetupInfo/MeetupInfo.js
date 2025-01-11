@@ -10,7 +10,7 @@ function MeetupInfo({ meetup }) {
   }
 
   return (
-    <div className="max-w-3xl h-[100%] mx-auto p-3 bg-green-200 rounded-lg shadow-lg">
+    <div className="max-w-3xl h-[100%] mx-auto p-3  rounded-lg shadow-lg">
       <h1 className="text-2xl font-semibold text-gray-800 mb-4">
         {meetup.title}
       </h1>
