@@ -76,7 +76,7 @@ const UserList = () => {
     )
   );
   return (
-    <div className="container mx-auto p-4">
+    <div className="users-list-wrap p-4">
       <FiltersBar
         techFilter={techFilter}
         levelFilter={levelFilter}
