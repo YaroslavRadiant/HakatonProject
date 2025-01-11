@@ -5,7 +5,7 @@ import FiltersBar from "./FiltersBar";
 const userList = [
   {
     name: "User 1",
-    mainTech: "React",
+    mainTech: "Angular",
     englishLevel: "a0",
     techList: [
       ["React", 50],
@@ -14,7 +14,37 @@ const userList = [
   },
   {
     name: "User 2",
+    mainTech: "Vue",
+    englishLevel: "a0",
+    techList: [
+      ["React", 23],
+      ["Vue", 70],
+    ],
+  },
+  {
+    name: "User 3",
     mainTech: "React",
+    englishLevel: "a0",
+    techList: [["React", 44]],
+  },
+  {
+    name: "User 4",
+    mainTech: "React",
+    englishLevel: "a0",
+    techList: [["React", 100]],
+  },
+  {
+    name: "User 1",
+    mainTech: "Angular",
+    englishLevel: "a0",
+    techList: [
+      ["React", 50],
+      ["Angular", 70],
+    ],
+  },
+  {
+    name: "User 2",
+    mainTech: "Vue",
     englishLevel: "a0",
     techList: [
       ["React", 23],
