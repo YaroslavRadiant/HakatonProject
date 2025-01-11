@@ -29,7 +29,7 @@ const FiltersBar = ({
       {/* Фільтр по рейнджу */}
       <div>
         <label htmlFor="price-range" className="mr-2">
-          Price Range
+          Level Range
         </label>
         <input
           type="range"

@@ -55,7 +55,16 @@ const Accordion = ({ items }) => {
 
   return (
     <div className="w-full  mx-auto">
-      {console.log(items)}
+      <div className="border-b last:border-b-0">
+        <div className="accordion-header text-blue-500 flex justify-between items-center w-full py-2">
+          <span className="text-lg text-left font-semibold w-1/6">Name</span>
+          <span className="text-lg font-semibold w-1/6">Main Tech</span>
+          <span className="text-lg font-semibold w-1/6">English Level</span>
+          <div className="w-1/6"></div>
+          <div className="w-1/6"></div>
+          <span className={` w-1/6 `}></span>
+        </div>
+      </div>
       {items.map((item, index) => (
         <AccordionItem
           key={index}
