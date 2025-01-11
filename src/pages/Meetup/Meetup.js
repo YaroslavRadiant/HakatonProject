@@ -176,21 +176,21 @@ function Meetup() {
   };
 
   return (
-    <div className="h-screen flex flex-col">
-      <div className="flex-[3]">
+    <div className="h-screen w-[100%] flex flex-col ">
+      <div className="flex-[3] w-[100%] h-[100%]">
         <h3 className="text-lg font-semibold text-gray-700 mb-4">
           Meetup planner:
         </h3>
-        <div className="h-[100%] flex w-screen">
-          <div className="flex justify-center items-center flex-[3] bg-red-200 rounded-lg shadow-lg">
+        <div className="flex h-[90%]">
+          <div className="flex justify-center items-center flex-[3]  rounded-lg shadow-lg">
             <Calendar meetups={meetups} onDateSelect={handleDateSelect} />
           </div>
-          <div className="flex-[1] ">
+          <div className="flex-[1] h-[100%] ">
             <MeetupInfo meetup={selectedMeetup} />
           </div>
         </div>
       </div>
-      <div className="flex[1] bg-gray-200 p-2">
+      <div className="flex[1]  p-2">
         <Recent meetups={meetups} />
       </div>
     </div>
