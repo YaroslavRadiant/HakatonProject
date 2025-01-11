@@ -28,8 +28,9 @@ html {
 
 body {
   color: var(--text-color);
-  font-family: sans-serif;
+
   margin: 0;
+  font-family: K2D, sans-serif;
 }
 
 a {
@@ -92,4 +93,15 @@ select {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
