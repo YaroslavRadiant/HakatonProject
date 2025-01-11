@@ -1,9 +1,10 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import CarearPlaning from "./pages/CarearPlaning/CarearPlaning";
 import UserList from "./pages/UserList/UserList";
 import Root from "./components/Root/Root";
 import Meetup from "./pages/Meetup/Meetup";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path={`/:user/carear-planing`} element={<CarearPlaning />} />
           <Route path={`/meetup`} element={<Meetup />} />
           <Route path={`/user-list`} element={<UserList />} />
+          <Route path={`/:user/profile-page`} element={<ProfilePage />} />
         </Route>
       </Routes>
     </div>
