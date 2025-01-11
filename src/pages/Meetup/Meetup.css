@@ -1,0 +1,22 @@
+/* Targeting the root carousel container */
+.carousel-root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Distribute the items in a row */
+}
+
+/* Ensuring the carousel slider itself is flex */
+.carousel-root .carousel-slider {
+  display: flex;
+  flex-direction: row !important; /* Enforcing flexbox on the slider */
+  justify-content: space-between;
+}
+
+/* Ensuring that the slides are aligned in a row */
+.carousel-root .slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
