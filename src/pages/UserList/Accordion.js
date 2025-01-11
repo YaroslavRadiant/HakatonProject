@@ -18,8 +18,8 @@ const AccordionItem = ({
       <span className="text-lg font-semibold">{name}</span>
       <span className="text-lg font-semibold">{mainTech}</span>
       <span className="text-lg font-semibold">{englishLevel}</span>
-      <NavLink to={`/:${name}/profile-page`}>Profile</NavLink>
-      <NavLink to={`/:${name}/carear-planing`}> Learning</NavLink>
+      <NavLink to={`/${name}/profile-page`}>Profile</NavLink>
+      <NavLink to={`/${name}/carear-planing`}> Learning</NavLink>
       <span
         className={`transform transition-transform text-lg duration-300 ${
           isOpen ? "rotate-180" : ""
