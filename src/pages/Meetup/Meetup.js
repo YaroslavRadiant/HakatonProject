@@ -164,11 +164,9 @@ const meetups = [
 ];
 
 function Meetup() {
-  const [selectedDate, setSelectedDate] = useState(null);
   const [selectedMeetup, setSelectedMeetup] = useState(null);
 
   const handleDateSelect = (date) => {
-    setSelectedDate(date);
     const meetup = meetups.find(
       (m) => new Date(m.date).toDateString() === date.toDateString()
     );
